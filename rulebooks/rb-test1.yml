@@ -11,8 +11,8 @@
 
   rules:
     - name: Event
-      condition: event.payload.message == "fail"
+      condition: event.payload.message == "hello"
       action:
         run_job_template:
-          name: hello
+          name: pb-test1
           organization: "Default"

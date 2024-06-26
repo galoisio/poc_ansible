@@ -1,0 +1,7 @@
+---
+- name: Playbook Test 1
+  hosts: all
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello MELI: Test 1 message!"
