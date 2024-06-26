@@ -1,0 +1,7 @@
+---
+- name: Job Template Test 1
+  hosts: all
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello MELI: Test 1 > JobTemplate jt-test1 say a message!"
