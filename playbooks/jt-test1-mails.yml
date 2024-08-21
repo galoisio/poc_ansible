@@ -1,0 +1,24 @@
+---
+- name: Job Template Test 1 mails: Playbook para enviar un POST a una URL
+  hosts: localhost
+  tasks:
+    - name: Enviar solicitud POST a la URL
+      uri:
+        url: "https://mails.furycloud.io/email"
+        method: POST
+        headers: 
+          Content-Type: "application/json"
+          x-tiger-token: "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjRmY2ZiZjEyLWY2ODUtNDI5NS1iOTIwLWFhMWNkMTUyYzI0NCIsInR5cCI6IkpXVCJ9.eyJhZGRpdGlvbmFsX2luZm8iOnsiZW1haWwiOiJnYWJyaWVsLmFsb2lzaW9AbWVyY2Fkb2xpYnJlLmNvbSIsImVudmlyb25tZW50IjoiTWVyY2Fkb0xpYnJlIiwiZnVsbF9uYW1lIjoiR2FicmllbCBHdXN0YXZvIEFsb2lzaW8iLCJ0eXBlIjoidXNlciIsInVzZXJuYW1lIjoiZ2Fsb2lzaW8ifSwiZXhwIjoxNzI0Mjg0Nzc3LCJpYXQiOjE3MjQyNTIzNzcsImlkZW50aXR5IjoibXJuOnNlZ2luZjphZDp1c2VyL2dhbG9pc2lvIiwiaXNzIjoiZnVyeV90aWdlciIsInN1YiI6ImdhbG9pc2lvIn0.Y0ttgBAGFI49dFC4w15qHKVLJrrejYfoyBWMvInPp3QgiLO0nI_tRse7yYwYM6Ev6l-saA2FcsJxfFRsvWxICXrHgIhX8wHDqjdmrvt_SfidbswZI4C93iOhvMeoA6eKdSjCq7jHXUSlzNr9qnWwSPcCp4o2lqkbs2rwwD0pK_fVj0e2nboG5KQxUg_SYRevLKytg_LbaIa7FK8lRD8XntmVkcjA1luL86h_9iAYXxquTyt--QFuANqqe-oIXH6K8UNrbALvNM89q_qGwMoQBtoQmG19t1quGPuE63Oawx63mY92jwZWFaDUdBdni92-xsOfYWdJlXo0DDDwfgzx0A"
+        body: |
+          to: |
+            value: "gabriel.aloisio@mercadolibre.com"
+            type: "address"
+          subjet: "This is a example using Fury Mails y enviado desde la POC ANSIBLE"
+          body_type: "raw_html"
+          body: "<h1>email from Ansible:</h1><p>Este es un correo de test usando Fury Mails</p>"
+        return_content: yes
+      register: result
+
+    - name: Mostrar la respuesta
+      debug:
+        var: result.content        
