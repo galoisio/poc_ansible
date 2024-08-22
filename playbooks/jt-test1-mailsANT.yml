@@ -4,7 +4,7 @@
   tasks:
     - name: Enviar solicitud POST a la URL
       ansible.builtin.uri:
-        url: https://ant.furycloud.io/messages://mails.furycloud.io/email
+        url: https://ant.furycloud.io/email
         method: POST
         headers: 
           Content-Type: application/json
