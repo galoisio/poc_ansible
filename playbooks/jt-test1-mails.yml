@@ -1,5 +1,5 @@
 ---
-- name: Job Template Test 1 mails: Playbook para enviar un POST a una URL
+- name: Job Template Test 1 MAILS
   hosts: localhost
   tasks:
     - name: Enviar solicitud POST a la URL
