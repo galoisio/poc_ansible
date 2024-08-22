@@ -13,9 +13,9 @@
           to: 
             value: gabriel.aloisio@mercadolibre.com
             type: address
-          subjet: "This is a example using Fury Mails y enviado desde la POC ANSIBLE"
-          body_type: "raw_html"
-          body: "<h1>email from Ansible:</h1><p>Este es un correo de test usando Fury Mails</p>"
+          subjet: This is a example using Fury Mails y enviado desde la POC ANSIBLE
+          body_type: raw_html
+          body: <h1>email from Ansible:</h1><p>Este es un correo de test usando Fury Mails</p>
         return_content: true
       register: result
 
