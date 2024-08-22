@@ -4,19 +4,19 @@
   tasks:
     - name: Enviar solicitud POST a la URL
       ansible.builtin.uri:
-        url: "https://mails.furycloud.io/email"
+        url: https://mails.furycloud.io/email
         method: POST
         headers: 
-          Content-Type: "application/json"
+          Content-Type: application/json
           x-tiger-token: "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjRmY2ZiZjEyLWY2ODUtNDI5NS1iOTIwLWFhMWNkMTUyYzI0NCIsInR5cCI6IkpXVCJ9.eyJhZGRpdGlvbmFsX2luZm8iOnsiZW1haWwiOiJnYWJyaWVsLmFsb2lzaW9AbWVyY2Fkb2xpYnJlLmNvbSIsImVudmlyb25tZW50IjoiTWVyY2Fkb0xpYnJlIiwiZnVsbF9uYW1lIjoiR2FicmllbCBHdXN0YXZvIEFsb2lzaW8iLCJ0eXBlIjoidXNlciIsInVzZXJuYW1lIjoiZ2Fsb2lzaW8ifSwiZXhwIjoxNzI0MzE4NzMwLCJpYXQiOjE3MjQyODYzMzAsImlkZW50aXR5IjoibXJuOnNlZ2luZjphZDp1c2VyL2dhbG9pc2lvIiwiaXNzIjoiZnVyeV90aWdlciIsInN1YiI6ImdhbG9pc2lvIn0.HT-bvzrM-J9lNCGUkmUtxfs4IIreRiA4jOVf9n7QhNLWk5grkih-DfXjmnuGs8FFuklsqGsodXq8gknJyeAoBh3yV04toS4nom1y9Gi5tVbRKJzJAI0sEL8ZFOjkOH23fOK7beSgOHb8qCGWF7LQkjqPxxBTh3xl3HzIyPMZtjAUjfvXNRIrgW7QqSk6wXNB1TJ_fUgmhDYeWPOlRyUZlMAiDkiL7c7dbQN38FO6OzizQtU5pD2FPHVCA0vqa59383mobrZohro5HJYY7G6LNmePi48KHWf0b2XxNBN0C50EacpfR04YKaiBpZ9xP39OPNYQCSrJFTxw73LPAMIb0Q"
         body:
           to: 
-            value: "gabriel.aloisio@mercadolibre.com"
-            type: "address"
+            value: gabriel.aloisio@mercadolibre.com
+            type: address
           subjet: "This is a example using Fury Mails y enviado desde la POC ANSIBLE"
           body_type: "raw_html"
           body: "<h1>email from Ansible:</h1><p>Este es un correo de test usando Fury Mails</p>"
-        return_content: yes
+        return_content: true
       register: result
 
     - name: Mostrar la respuesta
