@@ -1,0 +1,7 @@
+---
+- name: Job Template DataDog Webhook port 6000
+  hosts: all
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello MELI: Test > DataDog Webhook port 6000 message"
