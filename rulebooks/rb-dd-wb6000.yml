@@ -1,0 +1,18 @@
+---
+- name: Listen for events on a webhook
+  hosts: all
+
+  ## Define a webhook as source
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 6001
+
+ ## Define rules with conditions and actions
+  rules:
+    - name: Event
+      condition: event.payload.sender == "galoisio"
+      action:
+        run_job_template:
+          name: jt-dd-wb6000-ok
+          organization: "Default"
